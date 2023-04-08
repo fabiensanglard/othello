@@ -1,5 +1,5 @@
 
-int othelier[8][8];
+extern int othelier[8][8];
 
 extern void Debut(void);
 

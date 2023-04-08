@@ -1,6 +1,8 @@
-#define extern
 #include "../include/historique.h"
-#undef extern
+
+int coupsT;
+int NbreCoupsJoue;
+Historique History[60];
 
 
 // La variable x permet de preciser a partir de quel element on efface le tableau

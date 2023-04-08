@@ -1,3 +1,4 @@
+#pragma once
 // fichier include
 
 
@@ -21,8 +22,8 @@ Historique;
 
 
 extern int coupsT;
-Historique History[60];
 extern int NbreCoupsJoue;
+extern Historique History[60];
 
 
 

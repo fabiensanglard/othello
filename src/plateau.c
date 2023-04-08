@@ -1,7 +1,7 @@
 #include "../include/plateau.h"
 #include "../include/arbitre.h"
+#include "../include/var_globale.h"
 
-int i,j;
 
 
 // On va gerer dans ce fichier l evolution de l othelier
@@ -15,9 +15,9 @@ int i,j;
 void Debut(void)
 {
 
-for(i=0;i<8;i++)
+for(int i=0;i<8;i++)
      {
-         for(j=0;j<8;j++)
+         for(int j=0;j<8;j++)
              {
                          othelier[i][j]=0;
                      }
@@ -32,9 +32,9 @@ othelier[4][3]=2;
 void Funny(void)
 {
 
-for(i=0;i<8;i++)
+for(int i=0;i<8;i++)
      {
-         for(j=0;j<8;j++)
+         for(int j=0;j<8;j++)
              {
                          othelier[i][j]=0;
                      }
@@ -83,8 +83,8 @@ int Pion_Present(int x, int y)
 
 int Nbre_De_Pions_Posses_Joueur(int couleur){
   int Pions=0;  
-  for(i=0;i<8;i++){
-    for(j=0;j<8;j++){
+  for(int i=0;i<8;i++){
+    for(int j=0;j<8;j++){
       if (Pion_Present(i,j)==couleur){
 	Pions++;
       }
@@ -94,8 +94,8 @@ int Nbre_De_Pions_Posses_Joueur(int couleur){
 
 int Nbre_De_Pions_Posses(void){
   int Pions=0;  
-  for(i=0;i<8;i++){
-    for(j=0;j<8;j++){
+  for(int i=0;i<8;i++){
+    for(int j=0;j<8;j++){
       if (Pion_Present(i,j)!=0){
 	Pions++;
       }

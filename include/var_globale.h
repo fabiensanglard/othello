@@ -1,23 +1,24 @@
+#pragma once
 
-int i,j,x,y,pions,xgraph,ygraph,fab,fab2;
-char score[4];
-int fin = 0 ,fin_application=0;
-int debut =0;
-int parcours=0;
-char test[2];
+extern x,y,pions,xgraph,ygraph,fab,fab2;
+extern char score[4];
+extern int fin ,fin_application;
+extern int debut;
+extern int parcours;
+extern char test[2];
 
-char *Message="NUL";
-char *OldMessage="NUL";
+extern char *Message;
+extern char *OldMessage;
 
-int mode_de_jeu,niveau_ia,beginner=2;
-int modifdiff=0;
-char reponse;
-int afficher_aide=0;
-int conseil=0;
-int SauverouCharger=0;
-int quantite=0;
-int joueur_courant=2;
-int joueur_en_attente=1;
+extern int mode_de_jeu,niveau_ia,beginner;
+extern int modifdiff;
+extern char reponse;
+extern int afficher_aide;
+extern int conseil;
+extern int SauverouCharger;
+extern int quantite;
+extern int joueur_courant;
+extern int joueur_en_attente;
 
 
-
+extern int othelier[8][8];

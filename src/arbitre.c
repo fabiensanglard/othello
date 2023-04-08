@@ -1,16 +1,19 @@
 #include "../include/plateau.h"
 #include "../include/arbitre.h"
-//#include "../include/affichage.h"
-//#include "../include/ia.h"
 #include "../include/historique.h"
+#include "../include/graphlib.h"
 
 
 
-int i,j,k,l,m,n,tampon;
+int k,l,m,n,tampon;
 
+//int joueur_courant,joueur_en_attente;
 
+int scoreB,scoreW;
 
+//int mode_de_jeu;
 
+int  Possibilite[8][8];
 
 
 //Ondefinit ici les coups possibles , le joueur actuel ......
@@ -21,8 +24,8 @@ void Coup_Possible(void)
  int ParcoursX,ParcoursY,VectorX,VectorY,VerifierX,VerifierY;
   int distance;
 
-  for(i=0;i<8;i++)
-    for(j=0;j<8;j++)
+  for(int i=0;i<8;i++)
+    for(int j=0;j<8;j++)
       Possibilite[i][j]=0;
 
   //Possibilite[coups].x=-1;
@@ -105,8 +108,8 @@ void Changer_Joueur(void)
 int ScoreB(void)
 {
     scoreB=0;
-    for(i=0;i<8;i++){
-        for(j=0;j<8;j++){
+    for(int i=0;i<8;i++){
+        for(int j=0;j<8;j++){
             if (Pion_Present(i,j)==2){
                 scoreB++;
             }
@@ -122,8 +125,8 @@ int ScoreB(void)
   int ScoreW(void)
 {
     int scoreW=0;
-    for(i=0;i<8;i++){
-        for(j=0;j<8;j++){
+    for(int i=0;i<8;i++){
+        for(int j=0;j<8;j++){
             if (Pion_Present(i,j)==1){
                 scoreW++;
             }
@@ -135,7 +138,7 @@ int ScoreB(void)
 
 
 int PioncheckX,PioncheckY;
-int i,j,k;
+int k;
 int sensX,sensY;
 
 
@@ -318,8 +321,8 @@ int Verif_Coor( int x ,  int y){
 int Nbre_Coups_Possibles(void)
 {
   int coups=0;
-for(i=0;i<8;i++){
-  for(j=0;j<8;j++){
+for(int i=0;i<8;i++){
+  for(int j=0;j<8;j++){
     if (Possibilite[i][j]==1){
       coups++;}}}
  return coups;}
@@ -328,8 +331,8 @@ for(i=0;i<8;i++){
 // Permet d'afficher les coups possibles dans le terminal
 
 void Affichage_Coups(void){
-for(i=0;i<8;i++){
-  for(j=0;j<8;j++){
+for(int i=0;i<8;i++){
+  for(int j=0;j<8;j++){
     printf("%d ",Possibilite[i][j]);}
   printf("\n");
 }}

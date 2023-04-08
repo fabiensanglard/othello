@@ -1,6 +1,7 @@
 #include "../include/arbitre.h"
 #include "../include/historique.h"
 #include "../include/plateau.h"
+#include "../include/var_globale.h"
 
 
 
@@ -31,7 +32,7 @@ int testx,testy=0;
 int caseTrouve = 0  ;
 char caseX, caseY        ; 
 int  coups               ;
-int score[NOMBRE_COUPS] ; 
+//int score[NOMBRE_COUPS] ; 
 int  borne, maxScore     ;
 int Sothelier,othelierS[8][8];
 int scoreCoup;

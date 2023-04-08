@@ -20,10 +20,10 @@
 #define XSize  999
 #define YSize  749
 
-Display *Moniteur;
-int Ecran;
-Window FenetreParDefaut;
-GC Zone;
+extern Display *Moniteur;
+extern int Ecran;
+extern Window FenetreParDefaut;
+extern GC Zone;
 
 
 /*************************************************************************/

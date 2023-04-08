@@ -1,12 +1,12 @@
-int joueur_courant,joueur_en_attente;
+#pragma once
 
-int scoreB,scoreW;
+extern int joueur_courant,joueur_en_attente;
 
-int mode_de_jeu;
+extern int scoreB,scoreW;
 
-//struct Case Possibilite[60];
+extern int mode_de_jeu;
 
-int  Possibilite[8][8];
+extern int  Possibilite[8][8];
 
 
 // La fonction suivante permet de remplir la matrice Possibilite en fonction de l etat de la partie actuelle ( cf matrice Othelier )

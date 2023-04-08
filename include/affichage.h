@@ -1,7 +1,4 @@
-//enum COMMANDES{NOUVEAU,QUITTER,SAUVER,CHARGER,NUL,AIDE,JOUER};
-// Tentative d'utilisation de type enumere peut fructueuse !!
-// utlisisation des entiers pour gerer les commandes
-// NUL =0;JOUER=2;NOUVEAU=2;SAUVER=3;CHARGER=4;AIDE=5;QUITTER=6
+#pragma once
 
 
 // Permet d affecter a la variable Mode le type de partie acutelle, H. Vs H. ou H. Vs Cpter

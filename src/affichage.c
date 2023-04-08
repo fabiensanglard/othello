@@ -3,16 +3,17 @@
 #include "../include/plateau.h"
 #include "../include/arbitre.h"
 #include "../include/historique.h"
+#include "../include/var_globale.h"
 
 int Mode,SaveorLoad,Difficulte;
 char Demarrer;
-int i,j;
+//int i,j;
 int partie_finie=0;
 char Mobilite_1[2];
 char Mobilite_2[2];
 
 
- int a,b,c,d;
+int a,b,c,d;
 char lesnoirs[20];
 char lesblancs[20];
 char alpha,alpha2;
@@ -33,8 +34,8 @@ void Fixer_Difficulte(int param){
 
 void Afficher_Possibilte(void){
 
-     for ( i=0;i<8;i++){
-       for(j=0;j<8;j++){
+     for (int i=0;i<8;i++){
+       for(int j=0;j<8;j++){
 	 if (  Possibilite[i][j] == 1 ){
 	   // set_rougeclair();
 	   //fill_rectangle(51+i*50,51+j*50,100+i*50,100+j*50);
@@ -79,8 +80,8 @@ void Effacer_Meilleur_Possibilite(int RAZ){
 
 void Effacer_Possibilite(void){
   
-  for ( i=0;i<8;i++){
-    for(j=0;j<8;j++){
+  for (int i=0;i<8;i++){
+    for(int j=0;j<8;j++){
       if (  Possibilite[i][j] == 1 ){
 	//set_grey();
 	//fill_rectangle(51+i*50,51+j*50,100+i*50,100+j*50);
@@ -220,7 +221,7 @@ void Affichage_Parametre_Joueur(int x, int y){
   //rectangle(x,y,x+300,y+535);
   
   XAfficher_Parametre_Joueur(x,y);
-   for(i=0;i<3;i++){
+   for(int i=0;i<3;i++){
   line(x+i,y,x+i,y+535);
    }
 
@@ -314,41 +315,41 @@ void Dessiner_Othelier(int x, int y){
 
   set_black();
 
- for(i=-1;i<8;i++)
+ for(int i=-1;i<8;i++)
    {
 line(x,y+50+50*i,x+400,y+50+50*i);
 line(x+50+50*i,y,x+50+50*i,y+400);
 }
 
- for(i=-2;i<0;i++){
+ for(int i=-2;i<0;i++){
 
 line(50,50+i,450,50+i);
 
 }
 
 
- for(i=0;i<3;i++){
+ for(int i=0;i<3;i++){
 
 line(50,450+i,450,450+i);
 
 }
 
- for(i=-2;i<0;i++){
+ for(int i=-2;i<0;i++){
 
 line(50+i,50,50+i,450);
 
 }
 
- for(i=0;i<2;i++){
+ for(int i=0;i<2;i++){
 
 line(450+i,50,450+i,450);
 
 }
 
 
-for(i=0;i<8;i++)
+for(int i=0;i<8;i++)
      {
-         for(j=0;j<8;j++)
+         for(int j=0;j<8;j++)
              {
 
                  if (Pion_Present(i,j)==1)
@@ -380,7 +381,7 @@ void Dessiner_Plateau(int x, int y)
  Dessiner_Othelier(x,y);
  Affichage_Coordonnes(x,y);
  set_black();
-for(i=0;i>5;i++)
+for(int i=0;i>5;i++)
    {
      line(0,y+445+i,x+550,y+445+i);
    }
@@ -471,8 +472,8 @@ void Effacer_Score(void){
 
 void Afficher_Plateur_Texte(void){
 
-  for (i=0;i<8;i++){
-    for(j=0;j<8;j++){
+  for (int i=0;i<8;i++){
+    for(int j=0;j<8;j++){
       printf(" %d ",Pion_Present(j,i));
 	     }
       printf("\n");
