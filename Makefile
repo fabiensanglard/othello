@@ -13,6 +13,8 @@ LIB = $(CHEMIN)/lib/
 INC = $(CHEMIN)/include/
 OBJ = othello.o $(LIB)graphlib.o $(LIB)affichage.o $(LIB)plateau.o $(LIB)arbitre.o $(LIB)ia.o $(LIB)var_globale.o $(LIB)save.o $(LIB)historique.o
 
+$(shell mkdir -p $(LIB))
+
 othello : $(OBJ)
 	$(COMP) -o othello $(OBJ)  $(OPTIONS)
 

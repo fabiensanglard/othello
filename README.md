@@ -9,6 +9,12 @@ Original found at
 D:/Sauvegardes/Archives/Esisar/Annee 2001-2002 EI2/Mini-Projet/Othello/Version final
 ```
 
+# Prerequisites lib - installation for ubuntu
+sudo apt install make
+sudo apt install gcc
+sudo apt install libx11-dev
+sudo apt install libxpm-dev
+
 # Build
 
 ```
