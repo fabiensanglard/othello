@@ -9,11 +9,9 @@ void menu(void)
 {
 
 	// Initialisation d'une fenetre pour configurer la parite
-
-	printf("%d mode de jeu\n", mode_de_jeu);
 	Dessiner_Configuration();
 	Restaure_Config(&mode_de_jeu, &niveau_ia);
-	printf("%d mode de jeu\n", mode_de_jeu);
+
 	Fixer_mode(mode_de_jeu);
 	Fixer_Difficulte(niveau_ia);
 	Init_Choix(); // On rentre par defaut des choix de configuration ( ici ceux de la derniere partie )
