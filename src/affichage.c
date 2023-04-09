@@ -649,7 +649,7 @@ void Dessiner_Conf_IA(int x, int y, int audebut)
   {
 
     Ecrire_Rouge(50, 180, "Configuration du mode Human Vs. Computer");
-    write_gr(130, 200, "Niveau de difficult�");
+    write_gr(130, 200, "Niveau de difficulté");
   }
 
   write_gr(x + 10, y, "Expert");
@@ -658,13 +658,13 @@ void Dessiner_Conf_IA(int x, int y, int audebut)
   set_snow();
   fill_rectangle(x - 2, y - 2, x - 8, y - 8);
 
-  write_gr(x + 10, y + 20, "Interm�diaire");
+  write_gr(x + 10, y + 20, "Intermédiaire");
   set_black();
   fill_rectangle(x, y + 20, x - 10, y + 10);
   set_snow();
   fill_rectangle(x - 2, y + 18, x - 8, y + 12);
 
-  write_gr(x + 10, y + 40, "D�butant");
+  write_gr(x + 10, y + 40, "Débutant");
   set_black();
   fill_rectangle(x, y + 40, x - 10, y + 30);
   set_snow();
@@ -672,7 +672,7 @@ void Dessiner_Conf_IA(int x, int y, int audebut)
 
   if (audebut == 1)
   {
-    write_gr(150, 300, "Vous d�sirez poser le premier pion ?");
+    write_gr(150, 300, "Vous désirez poser le premier pion ?");
     set_black();
     fill_rectangle(140, 300, 130, 290);
     set_snow();
@@ -693,50 +693,10 @@ void Effacer_Conf_IA(int x, int y, int audebut)
     XEffacer_Conf_IA(x, y, 1);
   }
 
-  /*
-    if(audebut==1)
-      {
-        Ecrire_Blanc(50,180,"Configuration du mode Human Vs. Computer");
-        Ecrire_Blanc(130,200,"Niveau de difficulte");
-      }
-
-
-
-
-    Ecrire_Blanc(x+10,y,"Expert");
-    set_snow();
-      fill_rectangle(x,y,x-10,y-10);
-
-    Ecrire_Blanc(x+10,y+20,"Intermediare");
-    set_snow();
-    fill_rectangle(x,y+20,x-10,y+10);
-
-     Ecrire_Blanc(x+10,y+40,"Debutant");
-    set_snow();
-      fill_rectangle(x,y+40,x-10,y+30);
-
-
-
-    if(audebut==1)
-      {
-    Ecrire_Blanc(150,300,"Vous desirez poser le premier pion ?");
-    set_snow();
-    fill_rectangle(140,300,130,290);
-      }
-
-  */
 }
 
 void Dessiner_Configuration(void)
 {
-  //  Funny();
-  // set_snow();
-  // fill_rectangle(0,0,1000,1000);
-  // Dessiner_Othelier(550,50);
-
-  // set_snow();
-  // fill_rectangle(0,0,600,500);
-
   XDessiner_Fond();
 
   Ecrire_Rouge(200, 50, "Ecran de configuration de l'Othello");
@@ -756,9 +716,6 @@ void Dessiner_Configuration(void)
 
   Dessiner_Conf_IA(140, 230, 1);
 
-  //    set_red();
-  // fill_rectangle(380,380,510,410);
-  // Ecrire_Blanc(395,400,"Debuter la partie");
   set_black();
   rectangle(380, 380, 510, 410);
 
