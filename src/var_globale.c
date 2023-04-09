@@ -1,5 +1,5 @@
 // TEEST
-int i,j,x,y,pions,xgraph,ygraph,fab,fab2;
+int i,j,x,y,pions,fab,fab2;
 char score[4];
 int fin = 0 ,fin_application=0;
 int debut =0;

@@ -1,6 +1,6 @@
 #pragma once
 
-extern x,y,pions,xgraph,ygraph,fab,fab2;
+extern x,y,pions,fab,fab2;
 extern char score[4];
 extern int fin ,fin_application;
 extern int debut;

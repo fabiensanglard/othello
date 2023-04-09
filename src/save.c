@@ -45,40 +45,40 @@ partie *buf;
 laconfig cfg;
 laconfig *cfgbuf;
 
-void Sauver_Config( int lemode, int ladifficulte){
+void Sauver_Config( int game_mode, int difficulty){
  
 
-  cfg.Smode=lemode;
-  cfg.Sdiff=ladifficulte;
+  cfg.Smode=game_mode;
+  cfg.Sdiff=difficulty;
   
-  // 1ère partie : génération d'un fichier---------------------------
-	// OUVERTURE DU FICHIER en écriture/création, mode binaire
+  // 1ï¿½re partie : gï¿½nï¿½ration d'un fichier---------------------------
+	// OUVERTURE DU FICHIER en ï¿½criture/crï¿½ation, mode binaire
 	if ( (f1=fopen( path_config, "wb+" )) == NULL )
 	{
 		printf( "Erreur d'ouverture du fichier %s\n", fichier);
 		//	exit(1);
 	}
 
-	// ECRITURE de données dans le fichier
-	// écriture d'une chaine de caractere :
+	// ECRITURE de donnï¿½es dans le fichier
+	// ï¿½criture d'une chaine de caractere :
 		if ( fwrite( ch, strlen(ch), 1, f1 )!=1 )
 		{
-		printf(" erreur d'écriture de la chaine %s\n", ch);
+		printf(" erreur d'ï¿½criture de la chaine %s\n", ch);
 		//	exit(1);
 		}
 
 
       
-	// écriture de la structure de sauvegarde
+	// ï¿½criture de la structure de sauvegarde
 		if ( fwrite( &cfg, sizeof(laconfig), 1, f1 )!=1 )
 	{
-	printf(" erreur d'écriture de la structure\n");
+	printf(" erreur d'ï¿½criture de la structure\n");
 		// exit(1);
 	}
 	
 	//		if ( fprintf( fichiervaleur, sizeof(int), 1, f0 )!=1 )
 	//	{
-	//	printf(" erreur d'écriture du nombre\n");
+	//	printf(" erreur d'ï¿½criture du nombre\n");
 		// exit(1);
 	//	}
 	
@@ -98,7 +98,12 @@ void Sauver_Config( int lemode, int ladifficulte){
 
 
 
-void Restaure_Config( int *lemode, int *ladifficulte){
+void Restaure_Config( int *game_mode, int *difficulty){
+
+	// ignore existing configuration
+	*game_mode=0;
+	*difficulty=2;
+	return;
  
 	// OUVERTURE DU FICHIER en lecture seule, mode binaire
 	if ( (f1=fopen( path_config, "rb" )) == NULL )
@@ -107,10 +112,10 @@ void Restaure_Config( int *lemode, int *ladifficulte){
 		 exit(1);
 	}      
 
-	// POSITIONNEMENT sur le début de la structure
-	// On se positionne à partir du début du fichier, 
-	// après la chaine de caractère qui a été écrite
-	// et après le tableau d'entiers longs
+	// POSITIONNEMENT sur le dï¿½but de la structure
+	// On se positionne ï¿½ partir du dï¿½but du fichier, 
+	// aprï¿½s la chaine de caractï¿½re qui a ï¿½tï¿½ ï¿½crite
+	// et aprï¿½s le tableau d'entiers longs
 	if ( fseek( f1, strlen(ch), SEEK_SET ) != 0 )
 	{
 		printf( "Erreur de positionnement\n");
@@ -118,11 +123,11 @@ void Restaure_Config( int *lemode, int *ladifficulte){
 	}
     
 	// LECTURE de la structure
-	// allocation du buffer recevant les données
+	// allocation du buffer recevant les donnï¿½es
     
     cfgbuf = (laconfig *)malloc( sizeof(laconfig) );
 
-// lecture à la position courante du fichier
+// lecture ï¿½ la position courante du fichier
 
     if ( fread( cfgbuf, sizeof(laconfig), 1, f1 ) != 1 )
 	{
@@ -137,8 +142,8 @@ void Restaure_Config( int *lemode, int *ladifficulte){
 	 exit(1);
       } 
        
-    *lemode=cfgbuf->Smode;
-    *ladifficulte=cfgbuf->Sdiff;
+    *game_mode=cfgbuf->Smode;
+    *difficulty=cfgbuf->Sdiff;
   
 }
 
@@ -208,34 +213,34 @@ fichier[11]='6';
   donneraenvoyer.ScoupsT=coupsT;
   donneraenvoyer.SnbreCoupsJoue=NbreCoupsJoue;
 
-	// 1ère partie : génération d'un fichier---------------------------
-	// OUVERTURE DU FICHIER en écriture/création, mode binaire
+	// 1ï¿½re partie : gï¿½nï¿½ration d'un fichier---------------------------
+	// OUVERTURE DU FICHIER en ï¿½criture/crï¿½ation, mode binaire
 	if ( (f0=fopen( fichier, "wb+" )) == NULL )
 	{
 		printf( "Erreur d'ouverture du fichier %s\n", fichier);
 		//	exit(1);
 	}
 
-	// ECRITURE de données dans le fichier
-	// écriture d'une chaine de caractere :
+	// ECRITURE de donnï¿½es dans le fichier
+	// ï¿½criture d'une chaine de caractere :
 		if ( fwrite( ch, strlen(ch), 1, f0 )!=1 )
 		{
-		printf(" erreur d'écriture de la chaine %s\n", ch);
+		printf(" erreur d'ï¿½criture de la chaine %s\n", ch);
 		//	exit(1);
 		}
 
 
       
-	// écriture de la structure de sauvegarde
+	// ï¿½criture de la structure de sauvegarde
 		if ( fwrite( &donneraenvoyer, sizeof(partie), 1, f0 )!=1 )
 	{
-	printf(" erreur d'écriture de la structure\n");
+	printf(" erreur d'ï¿½criture de la structure\n");
 		// exit(1);
 	}
 	
 	//		if ( fprintf( fichiervaleur, sizeof(int), 1, f0 )!=1 )
 	//	{
-	//	printf(" erreur d'écriture du nombre\n");
+	//	printf(" erreur d'ï¿½criture du nombre\n");
 		// exit(1);
 	//	}
 	
@@ -291,10 +296,10 @@ fichier[11]='6';
 		 exit(1);
 	}      
 
-	// POSITIONNEMENT sur le début de la structure
-	// On se positionne à partir du début du fichier, 
-	// après la chaine de caractère qui a été écrite
-	// et après le tableau d'entiers longs
+	// POSITIONNEMENT sur le dï¿½but de la structure
+	// On se positionne ï¿½ partir du dï¿½but du fichier, 
+	// aprï¿½s la chaine de caractï¿½re qui a ï¿½tï¿½ ï¿½crite
+	// et aprï¿½s le tableau d'entiers longs
 	if ( fseek( f0, strlen(ch), SEEK_SET ) != 0 )
 	{
 		printf( "Erreur de positionnement\n");
@@ -302,11 +307,11 @@ fichier[11]='6';
 	}
     
 	// LECTURE de la structure
-	// allocation du buffer recevant les données
+	// allocation du buffer recevant les donnï¿½es
     
     buf = (partie *)malloc( sizeof(partie) );
 
-// lecture à la position courante du fichier
+// lecture ï¿½ la position courante du fichier
 
     if ( fread( buf, sizeof(partie), 1, f0 ) != 1 )
 	{

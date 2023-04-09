@@ -1,4 +1,4 @@
-COMP = gcc
+COMP = gcc -g
 OPTIONS     = -lm -lX11 -lXpm -L/usr/X11R6/lib
 
 
