@@ -1,11 +1,5 @@
 #pragma once
 
-
-
-
-
-
-
 extern void Coup_Ordi(int *x, int *y);
 
 extern int nb_pion_retourne(int XX, int YY);

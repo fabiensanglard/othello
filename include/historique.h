@@ -1,15 +1,14 @@
 #pragma once
 // fichier include
 
-
-typedef struct {
+typedef struct
+{
   int x;
   int y;
-} 
-Case;
+} Case;
 
-
-typedef struct {
+typedef struct
+{
 
   Case PionPose;
 
@@ -20,18 +19,12 @@ typedef struct {
 
 Historique;
 
-
 extern int coupsT;
 extern int NbreCoupsJoue;
 extern Historique History[60];
 
-
-
-
-extern void Sauver(Historique AMettredansHistory );
+extern void Sauver(Historique AMettredansHistory);
 
 extern void Charger(void);
 
-
 extern void Init_Hist(int x);
-
