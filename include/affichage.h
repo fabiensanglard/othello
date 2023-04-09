@@ -35,7 +35,7 @@ extern void Affichage_prec_suiv(void);
 extern void Dessiner_Othelier(int x, int y);
 
 // Affiche le plateau de jeu, on y passe en parametre le lieu ou l on desire afficher celui -ci.
-extern void Dessiner_Plateau(int x, int y);
+extern void drawCheckerboard(int x, int y);
 
 // Permet d'afficher les options de la partie en cours
 extern void Option(int x, int y);
@@ -54,7 +54,7 @@ extern void Effacer_Score(void);
 extern void Afficher_Plateur_Texte(void);
 
 // Permet d'afficher l'interface de communication avec le joueur
-extern void Interface(char message[]);
+extern void displayInformation(char message[]);
 extern void Effacer_Interface(char message[]);
 
 // Permet de savoir ou l utilsateur a clique elle renvoye ainsi un nombre en fonction du lieu clique

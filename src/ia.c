@@ -320,7 +320,7 @@ void min_max(int board[8][8],
     if (profondeur)
     {
 
-      // on regarde si on est a la fin de l arbre
+      // on regarde si on est a la finished de l arbre
 
       min_max(new_board, profondeur, joueur_suivant, &le_coup.x, &le_coup.y, &le_score);
     }
@@ -330,7 +330,7 @@ void min_max(int board[8][8],
 
       //	printf(" Nous sommes dans la feuille \n\n");
 
-      // on est a la fin
+      // on est a la finished
       le_score = evaluation_damier(new_board);
     }
 
@@ -666,7 +666,7 @@ int Coup_Ordi(int *x, int *y, int difficulte)
 
     // -------------------------------------------------------niveau intermediare-----------------------------------------------------------------------------------------------
   case 1:
-    //  printf("------------------Debut de l'ia----------------------\n");
+    //  printf("------------------initCheckerboard de l'ia----------------------\n");
 
     caseTrouve = 0; // on initialise la variable
     for (i = 0; i < NOMBRE_COUPS; i++)
@@ -702,7 +702,7 @@ int Coup_Ordi(int *x, int *y, int difficulte)
         //    printf( "Le score de ce coup est %d \n ",score[coups]);
       }
 
-      // restauration de l'othelier a la fin de chaque boucle
+      // restauration de l'othelier a la finished de chaque boucle
       for (i = 0; i < 8; i++)
       {
         for (j = 0; j < 8; j++)

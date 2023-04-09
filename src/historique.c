@@ -6,7 +6,7 @@ Historique History[60];
 
 // La variable x permet de preciser a partir de quel element on efface le tableau
 
-void Init_Hist(int valeurdini)
+void initHistory(int valeurdini)
 {
   int i, j;
 
@@ -46,7 +46,7 @@ void Sauver(Historique AMettredansHistory)
   {
 
     coupsT++;
-    Init_Hist(coupsT);
+      initHistory(coupsT);
   }
 }
 

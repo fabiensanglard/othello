@@ -1202,7 +1202,7 @@ void XEffacer_Dernier_Coup_Noir(void)
   XCopyArea(mydisplay, ecranconfig, doublebuffer, mygc, 100, 93, 60, 20, 820, 93);
 }
 
-void Initialiser(int x, int y, char titre[])
+void initFrame(int x, int y, char titre[])
 /*  e.i.    : indiff�rent
     e.f     : le mode graphique est initialis� (la machine trac� est
           utilisable).
@@ -1220,7 +1220,7 @@ void Initialiser(int x, int y, char titre[])
   clear_screen();
 }
 
-void Terminer()
+void closeFrame()
 /*  e.i.    :
   e.f     : le mode graphique n'est plus utilisable
  */

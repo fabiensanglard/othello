@@ -11,7 +11,7 @@ CHEMIN = .
 SRC = $(CHEMIN)/src/
 LIB = $(CHEMIN)/lib/
 INC = $(CHEMIN)/include/
-OBJ = othello.o $(LIB)graphlib.o $(LIB)affichage.o $(LIB)plateau.o $(LIB)arbitre.o $(LIB)ia.o $(LIB)var_globale.o $(LIB)save.o $(LIB)historique.o
+OBJ = othello.o $(LIB)graphlib.o $(LIB)affichage.o $(LIB)plateau.o $(LIB)arbitre.o $(LIB)ia.o $(LIB)var_globale.o $(LIB)save.o $(LIB)historique.o $(LIB)menu.o
 
 $(shell mkdir -p $(LIB))
 
@@ -35,6 +35,9 @@ $(LIB)plateau.o : $(SRC)plateau.c $(INC)plateau.h
 
 $(LIB)arbitre.o : $(SRC)arbitre.c $(INC)arbitre.h
 	$(COMP) -o $(LIB)arbitre.o -c $(SRC)arbitre.c
+
+$(LIB)menu.o : $(SRC)menu.c $(INC)menu.h
+	$(COMP) -o $(LIB)menu.o -c $(SRC)menu.c
 
 $(LIB)ia.o : $(SRC)ia.c $(INC)ia.h
 	$(COMP) -o $(LIB)ia.o -c $(SRC)ia.c

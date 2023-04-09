@@ -27,6 +27,10 @@ extern GC Zone;
 
 /*************************************************************************/
 
+extern void initFrame(int x, int y, char titre[]);
+
+extern void closeFrame();
+
 /* gr_inits : initialisation de l'e'cran graphique */
 
 void gr_inits(void);

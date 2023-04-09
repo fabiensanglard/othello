@@ -356,7 +356,7 @@ void Dessiner_Othelier(int x, int y)
   }
 }
 
-void Dessiner_Plateau(int x, int y)
+void drawCheckerboard(int x, int y)
 {
   int tab = 0;
   char cadre;
@@ -443,12 +443,7 @@ void Afficher_Score(void)
 
 void Effacer_Score(void)
 {
-  // strcat(scorefinalB,scoreblanc);
-
   XEffacer_Score(40, 460);
-
-  //  Ecrire_VertClair(50,475,scoreblanc);
-  // Ecrire_VertClair(150,475,scorenoir);
 }
 
 void Afficher_Plateur_Texte(void)
@@ -477,7 +472,7 @@ void Case_Clique(int *x, int *y)
   *y = (*y - 50) / 50;
 }
 
-void Interface(char message[])
+void displayInformation(char message[])
 {
   Ecrire_Rouge(130, 520, message);
 }

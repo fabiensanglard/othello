@@ -53,6 +53,7 @@ dkms.conf
 
 # IDE
 .vscode
+.idea
 
 # Othello build
 othello

@@ -27,4 +27,4 @@ extern void Sauver(Historique AMettredansHistory);
 
 extern void Charger(void);
 
-extern void Init_Hist(int x);
+extern void initHistory(int x);

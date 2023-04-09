@@ -2,7 +2,7 @@
 
 extern x, y, pions, fab, fab2;
 extern char score[4];
-extern int fin, fin_application;
+extern int finished;
 extern int debut;
 extern int parcours;
 extern char test[2];
